@@ -19,7 +19,7 @@ services:
     networks:
       - app
     healthcheck:
-      test: curl -s http://nginx:80 | grep works
+      test: [ "CMD-SHELL", "curl http://nginx | grep 'works'"
       interval: 20s
       timeout: 3s
       retries: 10
